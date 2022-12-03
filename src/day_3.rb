@@ -21,14 +21,14 @@ class Day3 < Day
     find_share_item_between_two(one_two_shared, two_three_shared)
   end
 
-  def share_item(rucksack)
+  def find_share_item_in_components(rucksack)
     first_half = rucksack[0...rucksack.length / 2]
     other_half = rucksack[rucksack.length / 2..]
     find_share_item_between_two(first_half, other_half)
   end
 
   def sum_priority_shared_items_compartments(path)
-    lists(path).map { |rucksack| share_item(rucksack) }.map { |item| to_priority(item) }.sum
+    lists(path).map { |rucksack| find_share_item_in_components(rucksack) }.map { |item| to_priority(item) }.sum
   end
 
   def sum_priority_badges(path)
