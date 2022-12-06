@@ -7,6 +7,13 @@ class Day5 < Day
     moved_stacks = move_stacks(**parsed_data)
     top_of_each(moved_stacks)
   end
+  
+    
+  def second_part_result(path)
+    parsed_data = parse(path)
+    moved_stacks = move_stacks_9001(**parsed_data)
+    top_of_each(moved_stacks)
+  end
 
   def parse(path)
     stacks = []
@@ -41,6 +48,12 @@ class Day5 < Day
   def move_stacks(stacks:, commands:)
     commands.reduce(stacks) do |moved_stacks, command|
       command.move(moved_stacks)
+    end
+  end
+
+  def move_stacks_9001(stacks:, commands:)
+    commands.reduce(stacks) do |moved_stacks, command|
+      command.move_9001(moved_stacks)
     end
   end
 
