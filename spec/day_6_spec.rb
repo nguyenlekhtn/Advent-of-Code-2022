@@ -1,8 +1,7 @@
 require_relative '../src/day_6'
 
-
 describe Day6 do
-  describe 
+  describe
 
   it 'returns correctgly results from input' do
     expect(subject.chars_processed('mjqjpqmgbljsphdztnvjfqwrcgsmlb')).to be 7

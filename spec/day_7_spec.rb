@@ -4,10 +4,10 @@ describe Day7 do
   subject { described_class.new }
 
   it 'return correct part 1 result' do
-    expect(subject.first_part_result('input/day_7_part1_sample.txt')).to be 95437
+    expect(subject.first_part_result('input/day_7_part1_sample.txt')).to be 95_437
   end
 
   it 'return correct part 2 result' do
-    expect(subject.second_part_result('input/day_7_part1_sample.txt')).to be 24933642
+    expect(subject.second_part_result('input/day_7_part1_sample.txt')).to be 24_933_642
   end
 end

@@ -33,7 +33,7 @@ class Day3 < Day
 
   def sum_priority_badges(path)
     groups_of_three = []
-    lists(path).each_slice(3) {  |tuple| groups_of_three.push(tuple) }
+    lists(path).each_slice(3) { |tuple| groups_of_three.push(tuple) }
     groups_of_three.map { |group| find_share_item_in_group(group) }.map { |item| to_priority(item) }.sum
   end
 end

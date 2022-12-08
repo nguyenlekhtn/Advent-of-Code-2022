@@ -51,7 +51,7 @@ class Day4 < Day
 end
 
 # check if a pair has one range fully contains the other
-#   
+#
 # count total pairs \
 
 # overlap

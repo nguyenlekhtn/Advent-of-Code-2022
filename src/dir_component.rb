@@ -23,7 +23,4 @@ class DirComponent < Component
   def find_dir_child(name)
     contexts.find { |context| context.name == name && context.type == 'dir' }
   end
-
-
-
 end

@@ -10,7 +10,6 @@ class Component
     0
   end
 
-
   def ==(other)
     @name == other.name && @parent == other.parent && @type = other.type
   end

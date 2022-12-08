@@ -7,8 +7,7 @@ class Day5 < Day
     moved_stacks = move_stacks(**parsed_data)
     top_of_each(moved_stacks)
   end
-  
-    
+
   def second_part_result(path)
     parsed_data = parse(path)
     moved_stacks = move_stacks_9001(**parsed_data)
@@ -19,17 +18,15 @@ class Day5 < Day
     stacks = []
     commands = []
     File.open(path).readlines(chomp: true).each do |line|
-      if line.match?(/\[[A-Z]\]/) 
+      if line.match?(/\[[A-Z]\]/)
         line_arr = line.chars
         line_arr.each_with_index do |char, char_index|
-          if char.match? /[A-Z]/
-            stack_index = (char_index - 1)/4
-            if !stacks[stack_index]
-              stacks[stack_index] = []
-            end
+          next unless char.match?(/[A-Z]/)
 
-            stacks[stack_index].push(char)
-          end
+          stack_index = (char_index - 1) / 4
+          stacks[stack_index] = [] unless stacks[stack_index]
+
+          stacks[stack_index].push(char)
         end
       else
         match_data = line.match(/move (\d+) from (\d+) to (\d+)/)
@@ -39,10 +36,9 @@ class Day5 < Day
           commands.push(command)
         end
       end
-
     end
 
-    {stacks: stacks.map(&:reverse), commands: commands}
+    { stacks: stacks.map(&:reverse), commands: commands }
   end
 
   def move_stacks(stacks:, commands:)
@@ -60,9 +56,7 @@ class Day5 < Day
   def top_of_each(stacks)
     stacks.map(&:last).join
   end
-
 end
-
 
 # get stacks from input
 # get move command from input

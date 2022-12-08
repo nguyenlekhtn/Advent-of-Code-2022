@@ -12,7 +12,7 @@ class MoveCommand
     stacks.map.each_with_index do |stack, index|
       next moved_from_stack if index == from_index
       next moved_to_stack if index == to_index
-      
+
       stack
     end
   end
@@ -22,11 +22,10 @@ class MoveCommand
     stacks.map.each_with_index do |stack, index|
       next moved_from_stack if index == from_index
       next moved_to_stack if index == to_index
-      
+
       stack
     end
   end
-
 
   private def move_between_two(quantity, from_stack, to_stack)
     moved_from_stack = from_stack.slice(0...-quantity)
