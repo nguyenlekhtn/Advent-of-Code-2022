@@ -1,9 +1,9 @@
 module Reader
   def lists(path)
-    File.open(path).readlines.map(&:chop).map(&:chars)
+    list(path).map(&:chars)
   end
 
   def list(path)
-    File.open(path).readlines.map(&:chop)
+    File.open(path).readlines(chomp: true)
   end
 end
